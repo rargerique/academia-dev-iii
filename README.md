@@ -15,7 +15,7 @@ Backend relativo ao projeto de academia da disciplina de Desenvolvimento de Soft
 CRUD relacionado à informações de clientes.
 URL: `http://localhost:8080/clientes`
 
-Payload for post: 
+Exemplo de payload for post: 
 `{
 	"nome": "Unicórnio"
 }`

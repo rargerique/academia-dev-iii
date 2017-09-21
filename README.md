@@ -15,7 +15,29 @@ Backend relativo ao projeto de academia da disciplina de Desenvolvimento de Soft
 CRUD relacionado à informações de clientes.
 URL: `http://localhost:8080/clientes`
 
-Exemplo de payload for post: 
+#### POST: 
 `{
-	"nome": "Unicórnio"
+	"nome": "Unicórnio",
+	"dataNasc": "1993-03-11",
+	"cpf": "03018494850",
+	"endereço": "Rua Sem nome, 240",
+	"estado": "RS",
+	"cidade": "São Leopoldo",
+	"cep": "93120450",
+	"email": "unicornio@gmail.com",
+	"telefone": "986675644",
+	"senha": "123456",
+	"tipoCadastro": "cliente"
 }`
+
+#### GET:
+
+URL: `http://localhost:8080/clientes`
+
+Retornar cliente especifico pelo id:
+
+URL `http://localhost:8080/clientes/{id}`
+
+Retornar cliente especifico pelo nome:
+
+URL `http://localhost:8080/clientes?nome='Unicórnio'`

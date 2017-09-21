@@ -16,7 +16,8 @@ CRUD relacionado à informações de clientes.
 URL: `http://localhost:8080/clientes`
 
 #### POST: 
-`{
+```json
+{
 	"nome": "Unicórnio",
 	"dataNasc": "1993-03-11",
 	"cpf": "03018494850",
@@ -28,7 +29,8 @@ URL: `http://localhost:8080/clientes`
 	"telefone": "986675644",
 	"senha": "123456",
 	"tipoCadastro": "cliente"
-}`
+}
+```
 
 #### GET:
 

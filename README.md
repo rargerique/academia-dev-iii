@@ -10,6 +10,13 @@ Backend relativo ao projeto de academia da disciplina de Desenvolvimento de Soft
 
 ## APIs
 
+Para acessar qualquer endpoint da API é necessário autenticação. Os endpoints são controlados com basic authentication. Para um primeiro acesso pode-se usar as seguintes credenciais: 
+
+``User: admin
+Senha: admin``
+
+Após, pode-se cadastrar funcionários no endpoint abaixo e utilizá-los para logar. Para isso deve-se criar um usuário do tipo `funcionario`, já que um `cliente` não pode logar diretamente no sistema.
+
 ### Clientes
 
 CRUD relacionado à informações de clientes.
@@ -18,7 +25,7 @@ URL: `http://localhost:8080/clientes`
 #### POST: 
 ```json
 {
-	"nome": "Unicórnio",
+	"nome": "Unicornio",
 	"dataNasc": "1993-03-11",
 	"cpf": "03018494850",
 	"endereço": "Rua Sem nome, 240",
@@ -42,4 +49,4 @@ URL `http://localhost:8080/clientes/{id}`
 
 Retornar cliente especifico pelo nome:
 
-URL `http://localhost:8080/clientes?nome='Unicórnio'`
+URL `http://localhost:8080/clientes/search/findByNome?nome=Unicornio`

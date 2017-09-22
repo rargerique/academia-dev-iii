@@ -35,7 +35,7 @@ URL: `http://localhost:8080/users`
 	"email": "unicornio@gmail.com",
 	"telefone": "986675644",
 	"senha": "123456",
-	"tipoCadastro": "cliente"
+	"tipoCadastro": "cliente",
 	"restricoes": ["http://localhost:8080/restricoes/{id}"]
 }
 ```

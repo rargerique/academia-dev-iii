@@ -19,8 +19,8 @@ Após, pode-se cadastrar funcionários no endpoint abaixo e utilizá-los para lo
 
 ### Clientes
 
-CRUD relacionado à informações de clientes.
-URL: `http://localhost:8080/clientes`
+CRUD relacionado à informações de clientes e funcionários.
+URL: `http://localhost:8080/users`
 
 #### POST: 
 ```json
@@ -39,14 +39,17 @@ URL: `http://localhost:8080/clientes`
 }
 ```
 
+- O campo dataNasc deve seguir o formato: yyyy-MM-dd.
+- O campo tipo cadastro aceita dois valores: `funcionario` e `cliente`
+
 #### GET:
 
-URL: `http://localhost:8080/clientes`
+URL: `http://localhost:8080/users`
 
 Retornar cliente especifico pelo id:
 
-URL `http://localhost:8080/clientes/{id}`
+URL `http://localhost:8080/users/{id}`
 
 Retornar cliente especifico pelo nome:
 
-URL `http://localhost:8080/clientes/search/findByNome?nome=Unicornio`
+URL `http://localhost:8080/users/search/findByNome?nome=Unicornio`

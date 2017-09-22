@@ -1,11 +1,15 @@
 package academia.entidades;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 import academia.enums.TipoCadastro;
 
@@ -37,6 +41,10 @@ public class User {
 	private String senha;
 	
 	private TipoCadastro tipoCadastro;
+	
+	@ManyToMany
+	@JoinTable(name="USER_RESTRICOES")
+	private List<Restricao> restricoes = new ArrayList<Restricao>();
 	
 	public long getId() {
 		return id;
@@ -109,6 +117,12 @@ public class User {
 	}
 	public void setTipoCadastro(TipoCadastro tipoCadastro) {
 		this.tipoCadastro = tipoCadastro;
+	}
+	public List<Restricao> getRestricoes() {
+		return restricoes;
+	}
+	public void setRestricoes(List<Restricao> restricoes) {
+		this.restricoes = restricoes;
 	}	
 	
 }

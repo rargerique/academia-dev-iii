@@ -17,7 +17,7 @@ Senha: admin``
 
 Após, pode-se cadastrar funcionários no endpoint abaixo e utilizá-los para logar. Para isso deve-se criar um usuário do tipo `funcionario`, já que um `cliente` não pode logar diretamente no sistema.
 
-### Clientes
+### Users
 
 CRUD relacionado à informações de clientes e funcionários.
 URL: `http://localhost:8080/users`
@@ -46,10 +46,43 @@ URL: `http://localhost:8080/users`
 
 URL: `http://localhost:8080/users`
 
-Retornar cliente especifico pelo id:
+Retornar user especifico pelo id:
 
 URL `http://localhost:8080/users/{id}`
 
-Retornar cliente especifico pelo nome:
+Retornar user especifico pelo nome:
 
 URL `http://localhost:8080/users/search/findByNome?nome=Unicornio`
+
+### Restricoes
+
+CRUS relacionado à restrições de saúde de clientes.
+URL: `http://localhost:8080/restricoes`
+
+#### POST:
+```json
+{
+	"descricao":"asma"
+}
+```
+
+A restrição deve ser registrada antes de ser adicionada ao usuário.
+
+### GET:
+
+URL: `http://localhost:8080/restricoes`
+
+Retornar restricao especifica pelo id:
+
+URL `http://localhost:8080/restricoes/{id}`
+
+Retornar restricao especifica pelo nome:
+
+URL `http://localhost:8080/restricoes/search/findByNome?nome=asma`
+
+Retornar restricoes de um cliente especifico:
+
+URL `http://localhost:8080/user/{id}/restricoes`
+
+
+

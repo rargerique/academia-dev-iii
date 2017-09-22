@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import academia.enums.TipoCadastro;
 
 @Entity
-public class Cliente {
+public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

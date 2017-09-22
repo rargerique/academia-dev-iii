@@ -36,11 +36,13 @@ URL: `http://localhost:8080/users`
 	"telefone": "986675644",
 	"senha": "123456",
 	"tipoCadastro": "cliente"
+	"restricoes": ["http://localhost:8080/restricoes/{id}"]
 }
 ```
 
 - O campo dataNasc deve seguir o formato: yyyy-MM-dd.
 - O campo tipo cadastro aceita dois valores: `funcionario` e `cliente`
+- Para adicionar restrições ao cliente é necessário que as mesmas tenham sido cadastradas previamente, e deve se utilizar a URI com o ID da restrição que se quer adicionar
 
 #### GET:
 

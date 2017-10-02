@@ -4,9 +4,11 @@ Backend relativo ao projeto de academia da disciplina de Desenvolvimento de Soft
 
 ## Como rodar
 
+É necessária a instalação do [Maven](https://maven.apache.org/) para subir o servidor.
+
 1. Clone o repositório localmente
 2. Rode o projeto com: `mvn spring-boot:run`
-3. Acesse as APIs por default na porta 8080 `http://localhost:8080/clientes`
+3. Acesse as APIs por default na porta 8080 `http://localhost:8080/users`
 
 ## APIs
 

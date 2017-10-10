@@ -12,10 +12,14 @@ Backend relativo ao projeto de academia da disciplina de Desenvolvimento de Soft
 
 ## APIs
 
-Para acessar qualquer endpoint da API é necessário autenticação. Os endpoints são controlados com basic authentication. Para um primeiro acesso pode-se usar as seguintes credenciais: 
+Para acessar qualquer endpoint da API é necessário autenticação. Os endpoints são controlados com autenticação através de JSON web tokens. Para um primeiro acesso é necessário obter o web token de um usuário padrão já cadastrado no sistema, através dos seguintes passos:
 
-``User: admin
-Senha: admin``
+1. Realizar uma chamada `POST` para a seguinte URL (admin/admin é um usuário padrão cadastrado no sistema para inicializar os registros):
+`http://localhost:8080/login?nome=admin&senha=admin`
+
+2. No retorno desta chamada é necessário salvar o token que estará no header `authorization`
+
+3. Para qualquer nova chamada na API deve-se enviar este token no header `Authorization`
 
 Após, pode-se cadastrar funcionários no endpoint abaixo e utilizá-los para logar. Para isso deve-se criar um usuário do tipo `funcionario`, já que um `cliente` não pode logar diretamente no sistema.
 

@@ -42,13 +42,15 @@ URL: `http://localhost:8080/users`
 	"telefone": "986675644",
 	"senha": "123456",
 	"tipoCadastro": "cliente",
-	"restricoes": ["http://localhost:8080/restricoes/{id}"]
+	"restricoes": ["http://localhost:8080/restricoes/{id}"],
+	"plano": "http://localhost:8080/planos/{id}"
 }
 ```
 
 - O campo dataNasc deve seguir o formato: yyyy-MM-dd.
 - O campo tipo cadastro aceita dois valores: `funcionario` e `cliente`
 - Para adicionar restrições ao cliente é necessário que as mesmas tenham sido cadastradas previamente, e deve se utilizar a URI com o ID da restrição que se quer adicionar
+- Para adicionar um plano ao cliente é necessário que o mesmo tenha sido cadastrado previamente, e deve se utilizar a URI com o ID do plano que se quer adicionar
 
 #### GET:
 
@@ -64,7 +66,7 @@ URL `http://localhost:8080/users/search/findByNome?nome=Unicornio`
 
 ### Restricoes
 
-CRUS relacionado à restrições de saúde de clientes.
+CRUD relacionado à restrições de saúde de clientes.
 URL: `http://localhost:8080/restricoes`
 
 #### POST:
@@ -92,5 +94,34 @@ Retornar restricoes de um cliente especifico:
 
 URL `http://localhost:8080/user/{id}/restricoes`
 
+### Planos
 
+CRUD relacionado aos planos de contrato da academia.
+URL: `http://localhost:8080/planos`
 
+#### POST:
+```json
+{
+	"descricao": "Plano 1",
+	"formaDePagamento": "anual"
+}
+```
+
+O plano deve ser cadastrado antes de ser adicionado ao usuário.
+O campo forma de pagamento é um enum que aceita os seguintes valores: `mensal`, `semestral`, `anual`
+
+### GET:
+
+URL: `http://localhost:8080/planos`
+
+Retornar plano pelo id:
+
+URL `http://localhost:8080/planos/{id}`
+
+Retornar plano pela descrição:
+
+URL `http://localhost:8080/restricoes/search/findByDescricao?descricao=Plano1`
+
+Retornar plano de um cliente especifico:
+
+URL `http://localhost:8080/user/{id}/plano`

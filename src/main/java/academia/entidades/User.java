@@ -10,6 +10,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 import academia.enums.TipoCadastro;
 
@@ -20,10 +24,13 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
+	@NotEmpty
 	private String nome;
 	
 	private Date dataNasc;  
 	
+	@NotEmpty
+	@Pattern(regexp = "([0-9]{2}[.]?[0-9]{3}[.]?[0-9]{3}[/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[.]?[0-9]{3}[.]?[0-9]{3}[-]?[0-9]{2})")
 	private String cpf;
 	
 	private String endereco;
@@ -34,10 +41,13 @@ public class User {
 	
 	private String cep;
 	
+	@NotEmpty
+	@Pattern(regexp = ".+@.+\\.[a-z]+")
 	private String email;
 	
 	private String telefone;
 	
+	@NotEmpty
 	private String senha;
 	
 	private TipoCadastro tipoCadastro;
@@ -45,6 +55,9 @@ public class User {
 	@ManyToMany
 	@JoinTable(name="USER_RESTRICOES")
 	private List<Restricao> restricoes = new ArrayList<Restricao>();
+	
+	@ManyToOne
+	private Plano plano;
 	
 	public long getId() {
 		return id;
@@ -123,6 +136,11 @@ public class User {
 	}
 	public void setRestricoes(List<Restricao> restricoes) {
 		this.restricoes = restricoes;
+	}
+	public Plano getPlano() {
+		return plano;
+	}
+	public void setPlano(Plano plano) {
+		this.plano = plano;
 	}	
-	
 }

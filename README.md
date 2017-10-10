@@ -86,7 +86,7 @@ URL `http://localhost:8080/restricoes/{id}`
 
 Retornar restricao especifica pelo nome:
 
-URL `http://localhost:8080/restricoes/search/findByNome?nome=asma`
+URL `http://localhost:8080/restricoes/search/findByDescricao?nome=asma`
 
 Retornar restricoes de um cliente especifico:
 

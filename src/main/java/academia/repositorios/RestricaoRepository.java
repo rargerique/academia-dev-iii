@@ -15,5 +15,5 @@ import academia.entidades.Restricao;
 public interface RestricaoRepository extends PagingAndSortingRepository<Restricao, Long>{
 
 	@Query("SELECT n FROM Restricao n where n.descricao = ?1")
-	List<Restricao> findByNome(@Param("descricao") String descricao);
+	List<Restricao> findByDescricao(@Param("descricao") String descricao);
 }

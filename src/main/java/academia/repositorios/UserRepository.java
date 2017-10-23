@@ -12,7 +12,10 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @CrossOrigin
 @RepositoryRestResource(collectionResourceRel = "users", path = "users")
 public interface UserRepository extends PagingAndSortingRepository<User, Long> {
-	
-	@Query("SELECT n FROM User n where n.nome = ?1")
-	List<User> findByNome(@Param("nome") String nome);
+
+    @Query("SELECT n FROM User n where n.nome = ?1")
+    List<User> findByNome(@Param("nome") String nome);
+
+    @Query("SELECT n FROM User n where n.tipoCadastro = 'funcionario'")
+    List<User> findByFuncionario();
 }

@@ -15,4 +15,7 @@ public interface UserRepository extends PagingAndSortingRepository<User, Long> {
 	
 	@Query("SELECT n FROM User n where n.nome = ?1")
 	List<User> findByNome(@Param("nome") String nome);
+        
+	@Query("SELECT n FROM User n where n.tipoCadastro = 'cliente'")
+	List<User> findByCliente();
 }

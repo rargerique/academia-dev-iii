@@ -25,12 +25,12 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
             throws AuthenticationException, IOException, ServletException {
 
-        String nome = request.getParameter("nome");
+        String email = request.getParameter("email");
         String senha = request.getParameter("senha");
 
         return getAuthenticationManager().authenticate(
                 new UsernamePasswordAuthenticationToken(
-                        nome,
+                        email,
                         senha,
                         Collections.emptyList()
                 )

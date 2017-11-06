@@ -15,7 +15,7 @@ public class Funcionario {
     private long id;
 
     @OneToOne
-    @JoinTable(name = "USER_MATRICULA")
+    @JoinTable(name = "USER_FUNCIONARIO")
     private User usuario;
 
     private String funcao;

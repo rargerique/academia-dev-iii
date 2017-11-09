@@ -1,5 +1,6 @@
 package academia.entidades;
 
+import academia.enums.Pagamento;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,7 +21,9 @@ public class Matricula {
 
     private String servicoContratado;
 
-    private String planoPagamento;
+    @OneToOne
+    @JoinTable(name = "MATRICULA_PLANO")
+    private Plano planoPagamento;
 
     private String formaPagamento;
 
@@ -50,11 +53,11 @@ public class Matricula {
         this.servicoContratado = servicoContratado;
     }
 
-    public String getPlanoPagamento() {
+    public Plano getPlanoPagamento() {
         return planoPagamento;
     }
 
-    public void setPlanoPagamento(String planoPagamento) {
+    public void setPlanoPagamento(Plano planoPagamento) {
         this.planoPagamento = planoPagamento;
     }
 

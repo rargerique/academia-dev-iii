@@ -125,3 +125,61 @@ URL `http://localhost:8080/restricoes/search/findByDescricao?descricao=Plano1`
 Retornar plano de um cliente especifico:
 
 URL `http://localhost:8080/user/{id}/plano`
+
+### Fichas de treino
+
+CRUD relacionado à fichas de treino dos clientes da academia.
+URL: `http://localhost:8080/fichastreino`
+
+#### POST:
+```json
+{
+	"usuario": "http://localhost:8080/users/{id}",
+	"atividades": ["http://localhost:8080/atividades/{id}]"
+}
+```
+
+O usuário e as atividades relativos ao plano devem ser cadastrados antes da sua adição à ficha de treino.
+
+### GET:
+
+URL: `http://localhost:8080/fichastreino`
+
+Retornar ficha de treino pelo id:
+
+URL `http://localhost:8080/fichastreino/{id}`
+
+Retornar ficha de treino pelo cliente:
+
+URL `http://localhost:8080/fichastreino/search/findByUserName?nome=Unicornio`
+
+### Atividades
+
+CRUD relacionado às atividades da academia.
+URL: `http://localhost:8080/atividades`
+
+#### POST:
+```json
+{
+	"descricao": "Natacao",
+	"restricoes": ["http://localhost:8080/restricoes/{id}"],
+	"dia": "segunda",
+	"periodo": "noite"
+}
+```
+
+As restrições relacionadas à atividade devem ser cadastradas antes de se criar a atividade.
+O campo dia é um enum que aceita os seguintes valores: `segunda`, `terca`, `quarta`, `quinta`, `sexta`, `sabado`
+O campo periodo é um enum que aceita os seguintes valores: `manha`, `tarde`, `noite`
+
+### GET:
+
+URL: `http://localhost:8080/atividades`
+
+Retornar atividade pelo id:
+
+URL `http://localhost:8080/atividades/{id}`
+
+Retornar atividade pela descrição:
+
+URL `http://localhost:8080/atividades/search/findByDescricao?descricao=Natacao`

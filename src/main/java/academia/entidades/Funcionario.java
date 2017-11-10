@@ -1,6 +1,8 @@
 package academia.entidades;
 
+import javax.persistence.Basic;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,6 +16,7 @@ public class Funcionario {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @Basic(fetch = FetchType.LAZY)
     @OneToOne
     @JoinTable(name = "USER_FUNCIONARIO")
     private User usuario;
